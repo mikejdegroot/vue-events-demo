@@ -8,6 +8,10 @@ const { port, env, dbURI } = require('./config/environment');
 const routes = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const errorHandler = require('./lib/errorHandler');
+const Vue = require('vue');
+const vueResource = require('vue-resource');
+
+Vue.use(vueResource);
 
 const app = express();
 
