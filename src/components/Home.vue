@@ -1,12 +1,9 @@
-
-<!-- src/components/Home.vue -->
-
 <template>
   <div class="col-sm-6 col-sm-offset-3">
-    <h1>Get a Free Chuck Norris Quote!</h1>
-    <button class="btn btn-primary" v-on:click="getQuote()">Get a Quote</button>
+    <h1>Events page</h1>
+    <button class="btn btn-primary" v-on:click="getEvent()">Get an Event</button>
     <div class="quote-area" v-if="quote">
-      <h2><blockquote>{{ quote }}</blockquote></h2>
+      <h2><blockquote>{{ event }}</blockquote></h2>
     </div>
   </div>
 </template>
@@ -15,11 +12,11 @@
 export default {
   data() {
     return {
-      quote: ''
+      event: ''
     }
   },
   methods: {
-    getQuote() {
+    getEvent() {
       this.$http
         .get('http://localhost:4000/api/events', (data) => {
           this.quote = data;
